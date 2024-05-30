@@ -43,6 +43,7 @@
             textBox2 = new TextBox();
             button2 = new Button();
             button3 = new Button();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             menuStrip1.Size = new Size(745, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // файлToolStripMenuItem
             // 
@@ -87,7 +89,7 @@
             // помощьToolStripMenuItem
             // 
             помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            помощьToolStripMenuItem.Size = new Size(152, 26);
+            помощьToolStripMenuItem.Size = new Size(224, 26);
             помощьToolStripMenuItem.Text = "Помощь";
             // 
             // label1
@@ -167,11 +169,22 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(12, 290);
+            button1.Name = "button1";
+            button1.Size = new Size(192, 29);
+            button1.TabIndex = 12;
+            button1.Text = "Добавить студентов";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(745, 392);
+            Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(textBox2);
@@ -209,5 +222,6 @@
         private TextBox textBox2;
         private Button button2;
         private Button button3;
+        private Button button1;
     }
 }

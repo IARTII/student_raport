@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Microsoft.Office.Interop.Excel;
+using System.Security.Cryptography;
 
 namespace KURSOVOI_PROECT_KURS3
 {
     public partial class Form2 : Form
     {
+        List<string> subj = new List<string>();
         int c = 0; //переключатель для выхода из программы
         string startWeekDate;
         string endWeekDate;
@@ -129,12 +131,12 @@ namespace KURSOVOI_PROECT_KURS3
             SaveFileDialog SFD = new SaveFileDialog();
             SFD.Filter = "XLSX (*.xlsx)|*.xlsx|XLS (*.xls)|*.xls";
 
-            if (SFD.ShowDialog() == DialogResult.OK)    
+            if (SFD.ShowDialog() == DialogResult.OK)
             {
                 File.Copy(@"C:\Users\ART1\source\repos\KURSOVOI_PROECT_KURS3\KURSOVOI_PROECT_KURS3\bin\Debug\net8.0-windows\шаблон_рапортичка.xlsx", SFD.FileName);
                 fileOutputStream = SFD.FileName;
                 MessageBox.Show("Файл успешно сохранен.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
 
                 Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
                 Workbook excelWorkbook = excelApp.Workbooks.Open(fileOutputStream);
@@ -143,13 +145,47 @@ namespace KURSOVOI_PROECT_KURS3
                 //2 12
                 worksheet.Cells[2, 22].Value += textBox1.Text;
                 worksheet.Cells[2, 27].Value += textBox2.Text;
-                worksheet.Cells[2, 12].Value += startWeekDate;
-                worksheet.Cells[2, 15].Value += endWeekDate;
+                worksheet.Cells[2, 11].Value += "c " + startWeekDate;
+                worksheet.Cells[2, 16].Value += endWeekDate;
+
+                int j = 0;
+                for (int i = 6; i < 35; i++)
+                {
+                    try
+                    {
+                        worksheet.Cells[i, 2].Value += subj[j];
+                    }
+                    catch
+                    {
+
+                    }
+                    j++;
+                }
 
                 excelWorkbook.Save();
                 excelWorkbook.Close();
                 excelApp.Quit();
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            add_subj a1 = new add_subj();
+            DialogResult dr = a1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                listBox1.Items.Add("Список студентов:");
+                for (int i = 0; i < a1.subjList.Count; i++)
+                {
+                    listBox1.Items.Add(a1.subjList[i]);
+                    subj.Add(a1.subjList[i]);
+                }
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
