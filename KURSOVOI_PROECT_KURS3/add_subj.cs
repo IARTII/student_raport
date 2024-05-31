@@ -50,10 +50,15 @@ namespace KURSOVOI_PROECT_KURS3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            for(int i = 0;i < checkedListBox1.Items.Count;i++)
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 subjList.Add(checkedListBox1.Items[i].ToString());
             }
+        }
+
+        private void add_subj_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -105,6 +105,7 @@
             Controls.Add(checkedListBox1);
             Name = "add_subj";
             Text = "add_subj";
+            Load += add_subj_Load;
             ResumeLayout(false);
             PerformLayout();
         }

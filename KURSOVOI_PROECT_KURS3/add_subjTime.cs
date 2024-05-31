@@ -13,6 +13,7 @@ namespace KURSOVOI_PROECT_KURS3
     public partial class add_subjTime : Form
     {
         public List<string> subjects_time = new List<string>();
+        public int Day_of_Week = 0;
         public add_subjTime()
         {
             InitializeComponent();
@@ -36,6 +37,13 @@ namespace KURSOVOI_PROECT_KURS3
             subjects_time.Add(textBox3.Text);
             subjects_time.Add(textBox4.Text);
             subjects_time.Add(textBox5.Text);
+
+            Day_of_Week = comboBox1.SelectedIndex;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

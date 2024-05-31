@@ -42,6 +42,8 @@
             пара3 = new DataGridViewTextBoxColumn();
             пара4 = new DataGridViewTextBoxColumn();
             пара5 = new DataGridViewTextBoxColumn();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -54,6 +56,7 @@
             button1.TabIndex = 0;
             button1.Text = "Добавить расписание";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // menuStrip1
             // 
@@ -75,14 +78,14 @@
             // сохранитьToolStripMenuItem
             // 
             сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            сохранитьToolStripMenuItem.Size = new Size(224, 26);
+            сохранитьToolStripMenuItem.Size = new Size(166, 26);
             сохранитьToolStripMenuItem.Text = "Сохранить";
             сохранитьToolStripMenuItem.Click += сохранитьToolStripMenuItem_Click;
             // 
             // выйтиToolStripMenuItem
             // 
             выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            выйтиToolStripMenuItem.Size = new Size(224, 26);
+            выйтиToolStripMenuItem.Size = new Size(166, 26);
             выйтиToolStripMenuItem.Text = "Выйти";
             выйтиToolStripMenuItem.Click += выйтиToolStripMenuItem_Click;
             // 
@@ -151,11 +154,31 @@
             пара5.Name = "пара5";
             пара5.Width = 60;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(12, 59);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(175, 28);
+            comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(172, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Выберите день недели:";
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(menuStrip1);
@@ -187,5 +210,7 @@
         private DataGridViewTextBoxColumn пара3;
         private DataGridViewTextBoxColumn пара4;
         private DataGridViewTextBoxColumn пара5;
+        private ComboBox comboBox1;
+        private Label label1;
     }
 }
