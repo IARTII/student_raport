@@ -106,10 +106,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Студенты, пара1, пара2, пара3, пара4, пара5 });
-            dataGridView1.Location = new Point(310, 31);
+            dataGridView1.Location = new Point(309, 31);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(478, 407);
+            dataGridView1.Size = new Size(479, 407);
             dataGridView1.TabIndex = 2;
             // 
             // Студенты

@@ -39,6 +39,7 @@ namespace KURSOVOI_PROECT_KURS3
             comboBox1.Items.Add("Пятница");
             comboBox1.Items.Add("Суббота");
 
+            comboBox1.Text = "";
 
             OpenFileDialog OFD = new OpenFileDialog();
             OFD.Filter = "XLSX (*.xlsx)|*.xlsx|XLS (*.xls)|*.xls";
@@ -66,7 +67,35 @@ namespace KURSOVOI_PROECT_KURS3
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            Workbook excelWorkbook = excelApp.Workbooks.Open(fileInputStream);
+            Worksheet worksheet = excelWorkbook.Sheets[1];
 
+            try //тут ошибка, почему-то записывает со 2 ячейки, и пропускает 3 запись
+            {
+                for (int i = 1; i < dataGridView1.Rows.Count - 2; i++)
+                {
+                    for (int j = 1; j < 6; j++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        {
+                            worksheet.Cells[5 + i, d1 + j].Value = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        }
+                        else
+                        {
+                            worksheet.Cells[5 + i, d1 + j].Value = "";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.Source + ex.StackTrace);
+            }
+
+            excelWorkbook.Save();
+            excelWorkbook.Close();
+            excelApp.Quit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -201,6 +230,11 @@ namespace KURSOVOI_PROECT_KURS3
             excelWorkbook.Save();
             excelWorkbook.Close();
             excelApp.Quit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
