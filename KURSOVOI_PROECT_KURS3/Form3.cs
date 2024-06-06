@@ -71,19 +71,19 @@ namespace KURSOVOI_PROECT_KURS3
             Workbook excelWorkbook = excelApp.Workbooks.Open(fileInputStream);
             Worksheet worksheet = excelWorkbook.Sheets[1];
 
-            try //тут ошибка, почему-то записывает со 2 ячейки, и пропускает 3 запись
+            try
             {
-                for (int i = 1; i < dataGridView1.Rows.Count - 2; i++)
+                for (int i = 0; i < dataGridView1.Rows.Count - 2; i++)
                 {
                     for (int j = 1; j < 6; j++)
                     {
                         if (dataGridView1.Rows[i].Cells[j].Value != null)
                         {
-                            worksheet.Cells[5 + i, d1 + j - 1].Value = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                            worksheet.Cells[6 + i, d1 + j - 1].Value = dataGridView1.Rows[i].Cells[j].Value.ToString();
                         }
                         else
                         {
-                            worksheet.Cells[5 + i, d1 + j - 1].Value = "";
+                            worksheet.Cells[6 + i, d1 + j - 1].Value = "";
                         }
                     }
                 }
@@ -156,6 +156,8 @@ namespace KURSOVOI_PROECT_KURS3
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
@@ -180,8 +182,6 @@ namespace KURSOVOI_PROECT_KURS3
                     break;
             }
 
-            dataGridView1.Rows.Clear();
-
             Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
             Workbook excelWorkbook = excelApp.Workbooks.Open(fileInputStream);
             Worksheet worksheet = excelWorkbook.Sheets[1];
@@ -194,6 +194,7 @@ namespace KURSOVOI_PROECT_KURS3
                     Time_of_subj.Add(worksheet.Cells[36, i].Value);
                 }
 
+                student_surname.Clear();
                 for (int i = 6; i < 35; i++)
                 {
                     if (worksheet.Cells[i, 2].Value != "")
@@ -212,6 +213,15 @@ namespace KURSOVOI_PROECT_KURS3
                         dataGridView1.Rows[rowIndex].Cells[0].Value = value;
                     }
                 }
+
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    for (int p = 1; p < 6; p++)
+                    {
+                        dataGridView1.Rows[i].Cells[p].Value = worksheet.Cells[6 + i, d1 + p - 1].Value;
+                    }
+                }
+
                 rowIndex1 = dataGridView1.Rows.Add();
                 dataGridView1.Rows[rowIndex1].Cells[0].Value = "Предмет";
 
