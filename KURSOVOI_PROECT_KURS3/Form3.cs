@@ -79,11 +79,11 @@ namespace KURSOVOI_PROECT_KURS3
                     {
                         if (dataGridView1.Rows[i].Cells[j].Value != null)
                         {
-                            worksheet.Cells[5 + i, d1 + j].Value = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                            worksheet.Cells[5 + i, d1 + j - 1].Value = dataGridView1.Rows[i].Cells[j].Value.ToString();
                         }
                         else
                         {
-                            worksheet.Cells[5 + i, d1 + j].Value = "";
+                            worksheet.Cells[5 + i, d1 + j - 1].Value = "";
                         }
                     }
                 }
