@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             button1 = new Button();
             menuStrip1 = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
@@ -106,10 +107,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Студенты, пара1, пара2, пара3, пара4, пара5 });
-            dataGridView1.Location = new Point(309, 31);
+            dataGridView1.Location = new Point(193, 31);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(479, 407);
+            dataGridView1.Size = new Size(595, 407);
             dataGridView1.TabIndex = 2;
             // 
             // Студенты
@@ -182,9 +183,10 @@
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "Form3";
-            Text = "Form3";
+            Text = "Заполнение";
             FormClosing += Form3_FormClosing;
             Load += Form3_Load;
             menuStrip1.ResumeLayout(false);

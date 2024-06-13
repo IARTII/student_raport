@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_subjTime));
             label1 = new Label();
             comboBox1 = new ComboBox();
             textBox1 = new TextBox();
@@ -132,6 +133,7 @@
             Controls.Add(textBox1);
             Controls.Add(comboBox1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "add_subjTime";
             Text = "add_subjTime";
             Load += add_subjTime_Load;

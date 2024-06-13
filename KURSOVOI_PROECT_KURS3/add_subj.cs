@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace KURSOVOI_PROECT_KURS3
 {
@@ -59,6 +60,40 @@ namespace KURSOVOI_PROECT_KURS3
         private void add_subj_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+
+            if (OFD.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(OFD.FileName);
+
+                while (!sr.EndOfStream)
+                {
+                    checkedListBox1.Items.Add(sr.ReadLine());
+                }
+                sr.Close();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SFD = new SaveFileDialog();
+            SFD.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+
+            if (SFD.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter sw = new StreamWriter(SFD.FileName);
+
+                for(int i = 0;i < checkedListBox1.Items.Count;i++)
+                {
+                    sw.WriteLine(checkedListBox1.Items[i].ToString());
+                }
+                sw.Close();
+            }
         }
     }
 }

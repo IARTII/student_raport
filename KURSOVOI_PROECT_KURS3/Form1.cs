@@ -25,5 +25,10 @@ namespace KURSOVOI_PROECT_KURS3
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

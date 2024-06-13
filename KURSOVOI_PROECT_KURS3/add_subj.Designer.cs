@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_subj));
             checkedListBox1 = new CheckedListBox();
             textBox1 = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
             SuspendLayout();
             // 
             // checkedListBox1
@@ -92,17 +95,40 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.Location = new Point(12, 80);
+            button5.Name = "button5";
+            button5.Size = new Size(161, 29);
+            button5.TabIndex = 6;
+            button5.Text = "Добавить из файла";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(12, 217);
+            button6.Name = "button6";
+            button6.Size = new Size(214, 29);
+            button6.TabIndex = 7;
+            button6.Text = "Сохранить список в файле";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // add_subj
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(520, 293);
+            Controls.Add(button6);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(checkedListBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "add_subj";
             Text = "add_subj";
             Load += add_subj_Load;
@@ -118,5 +144,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
+        private Button button6;
     }
 }
