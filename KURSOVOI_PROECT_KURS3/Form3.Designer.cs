@@ -61,6 +61,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = SystemColors.AppWorkspace;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, справкаToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
@@ -177,6 +178,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Controls.Add(comboBox1);
@@ -186,6 +188,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "Form3";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Заполнение";
             FormClosing += Form3_FormClosing;
             Load += Form3_Load;

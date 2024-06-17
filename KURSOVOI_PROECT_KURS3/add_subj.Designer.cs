@@ -41,6 +41,7 @@
             // 
             // checkedListBox1
             // 
+            checkedListBox1.BackColor = SystemColors.Control;
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(358, 12);
             checkedListBox1.Name = "checkedListBox1";
@@ -49,6 +50,7 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = SystemColors.Control;
             textBox1.Location = new Point(12, 12);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(293, 27);
@@ -56,12 +58,13 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.ButtonFace;
             button1.Location = new Point(12, 45);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 2;
             button1.Text = "Добавить";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
@@ -119,6 +122,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(520, 293);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -128,8 +132,10 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(checkedListBox1);
+            ForeColor = SystemColors.Desktop;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "add_subj";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "add_subj";
             Load += add_subj_Load;
             ResumeLayout(false);

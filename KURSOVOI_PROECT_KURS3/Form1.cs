@@ -1,3 +1,9 @@
+﻿using Microsoft.Office.Interop.Excel;
+using System.Drawing.Printing;
+using Spire.Xls;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Windows.Forms;
+
 namespace KURSOVOI_PROECT_KURS3
 {
     public partial class Form1 : Form
@@ -31,46 +37,32 @@ namespace KURSOVOI_PROECT_KURS3
 
         private void button3_Click(object sender, EventArgs e)
         {
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "XLSX (*.xlsx)|*.xlsx|XLS (*.xls)|*.xls";
 
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
-        {
-            pictureBox2.BackColor = Color.Gray;
-        }
-
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.BackColor = Color.Empty;
-        }
-
-        private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
-        {
-            pictureBox3.BackColor = Color.Gray;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Empty;
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if(p == 0)
+            if (OFD.ShowDialog() == DialogResult.OK)
             {
-                panel1.Width = 2000;
-                this.WindowState = FormWindowState.Normal;
-                p = 1;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-                p = 0;
+                //Создаем объект Workbook 
+                Spire.Xls.Workbook workbook = new Spire.Xls.Workbook();
+                //Загрузить файл Excel 
+                workbook.LoadFromFile(OFD.FileName);
+                //Создаем объект PrintDialog 
+                PrintDialog dialog = new PrintDialog();
+                //Укажите диалог настроек принтера.AllowCurrentPage = true;
+                dialog.AllowCurrentPage = true;
+                dialog.AllowSomePages = true;
+                dialog.AllowSelection = true;
+                dialog.UseEXDialog = true;
+                dialog.PrinterSettings.Duplex = Duplex.Simplex;
+                dialog.PrinterSettings.PrintRange = PrintRange.AllPages;
+
+                //Create a PrintDocument object based on the workbook
+                PrintDocument printDocument = workbook.PrintDocument;
+                //Invoke the print dialog
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument.Print();
+                }
             }
         }
     }

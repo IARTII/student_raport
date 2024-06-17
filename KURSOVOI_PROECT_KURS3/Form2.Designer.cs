@@ -50,6 +50,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = SystemColors.AppWorkspace;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, справкаToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
@@ -105,6 +106,7 @@
             // 
             // monthCalendar1
             // 
+            monthCalendar1.BackColor = SystemColors.ButtonShadow;
             monthCalendar1.Location = new Point(12, 71);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 3;
@@ -184,6 +186,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(745, 392);
             Controls.Add(button1);
             Controls.Add(button3);
@@ -199,6 +202,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Создание";
             FormClosing += Form2_FormClosing;
             Load += Form2_Load;
