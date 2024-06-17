@@ -56,9 +56,9 @@ namespace KURSOVOI_PROECT_KURS3
                 dialog.PrinterSettings.Duplex = Duplex.Simplex;
                 dialog.PrinterSettings.PrintRange = PrintRange.AllPages;
 
-                //Create a PrintDocument object based on the workbook
+                //Создайте объект PrintDocument на основе книги.
                 PrintDocument printDocument = workbook.PrintDocument;
-                //Invoke the print dialog
+                //Вызов диалога печати
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     printDocument.Print();
