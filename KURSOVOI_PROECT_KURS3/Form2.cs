@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using Microsoft.Office.Interop.Excel;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace KURSOVOI_PROECT_KURS3
 {
@@ -59,6 +60,13 @@ namespace KURSOVOI_PROECT_KURS3
         private void Form2_Load(object sender, EventArgs e)
         {
             listBox1.Items.Add("Выбранные данные:");
+            string[] lines = File.ReadAllLines(@"..\..\..\Log\LastLog.txt");
+            textBox1.Text = lines[0];
+            textBox2.Text = lines[1];
+            textBox3.Text = lines[2];
+            listBox1.Items.Add("ФИО Старосты: " + textBox1.Text);
+            listBox1.Items.Add("ФИО Куратора: " + textBox2.Text);
+            listBox1.Items.Add("Группа: " + textBox3.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -143,6 +151,7 @@ namespace KURSOVOI_PROECT_KURS3
                 Worksheet worksheet = excelWorkbook.Sheets[1];
 
                 //2 12
+                worksheet.Cells[3, 2].Value += textBox3.Text;
                 worksheet.Cells[2, 22].Value += textBox1.Text;
                 worksheet.Cells[2, 27].Value += textBox2.Text;
                 worksheet.Cells[2, 11].Value += "c " + startWeekDate;
@@ -186,6 +195,21 @@ namespace KURSOVOI_PROECT_KURS3
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                string currentItem = listBox1.Items[i].ToString();
+
+                if (currentItem.Contains("Группа"))
+                {
+                    listBox1.Items.RemoveAt(i);
+                    i--; // Уменьшаем счетчик, так как после удаления элементов сдвигаются
+                }
+            }
+            listBox1.Items.Add("Группа: " + textBox3.Text);
         }
     }
 }

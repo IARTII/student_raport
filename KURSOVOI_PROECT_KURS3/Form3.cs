@@ -67,6 +67,7 @@ namespace KURSOVOI_PROECT_KURS3
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            dataGridView1.EndEdit();
             Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
             Workbook excelWorkbook = excelApp.Workbooks.Open(fileInputStream);
             Worksheet worksheet = excelWorkbook.Sheets[1];

@@ -45,6 +45,9 @@
             button2 = new Button();
             button3 = new Button();
             button1 = new Button();
+            label4 = new Label();
+            textBox3 = new TextBox();
+            button4 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,7 +161,7 @@
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 10;
-            button2.Text = "Добавить";
+            button2.Text = "Изменить";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -168,7 +171,7 @@
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 11;
-            button3.Text = "Добавить";
+            button3.Text = "Изменить";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -182,12 +185,41 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 322);
+            label4.Name = "label4";
+            label4.Size = new Size(119, 20);
+            label4.TabIndex = 13;
+            label4.Text = "Введите группу:";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(12, 349);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(177, 27);
+            textBox3.TabIndex = 14;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(195, 349);
+            button4.Name = "button4";
+            button4.Size = new Size(86, 29);
+            button4.TabIndex = 15;
+            button4.Text = "Изменить";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(745, 392);
+            Controls.Add(button4);
+            Controls.Add(textBox3);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -229,5 +261,8 @@
         private Button button2;
         private Button button3;
         private Button button1;
+        private Label label4;
+        private TextBox textBox3;
+        private Button button4;
     }
 }
