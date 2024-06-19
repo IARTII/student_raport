@@ -40,18 +40,6 @@ namespace KURSOVOI_PROECT_KURS3
             this.Close();
         }
 
-        class Raport
-        {
-            public DateTime StartWeek { get; set; }
-            public DateTime EndWeek { get; set; }
-            public Raport(DateTime StartWeek)
-            {
-                this.StartWeek = StartWeek;
-                EndWeek = StartWeek.AddDays(6);
-            }
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
