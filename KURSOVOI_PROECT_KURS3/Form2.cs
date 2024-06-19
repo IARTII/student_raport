@@ -87,21 +87,6 @@ namespace KURSOVOI_PROECT_KURS3
             listBox1.Items.Add("ФИО Куратора: " + textBox2.Text);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < listBox1.Items.Count; i++)
-            {
-                string currentItem = listBox1.Items[i].ToString();
-
-                if (currentItem.Contains("Куратора"))
-                {
-                    listBox1.Items.RemoveAt(i);
-                    i--; // Уменьшаем счетчик, так как после удаления элементов сдвигаются
-                }
-            }
-            listBox1.Items.Add("Выбранная неделя:  " + monthCalendar1);
-        }
-
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             for (int i = 0; i < listBox1.Items.Count; i++)
