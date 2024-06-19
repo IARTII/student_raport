@@ -141,7 +141,7 @@ namespace KURSOVOI_PROECT_KURS3
 
             if (SFD.ShowDialog() == DialogResult.OK)
             {
-                File.Copy(@"C:\Users\ART1\source\repos\KURSOVOI_PROECT_KURS3\KURSOVOI_PROECT_KURS3\bin\Debug\net8.0-windows\шаблон_рапортичка.xlsx", SFD.FileName);
+                File.Copy(@"..\..\..\шаблон_рапортичка.xlsx", SFD.FileName);
                 fileOutputStream = SFD.FileName;
                 MessageBox.Show("Файл успешно сохранен.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -174,6 +174,13 @@ namespace KURSOVOI_PROECT_KURS3
                 excelWorkbook.Save();
                 excelWorkbook.Close();
                 excelApp.Quit();
+
+                StreamWriter sw = new StreamWriter(@"..\..\..\Log\LastLog.txt");
+
+                sw.WriteLine(textBox1.Text);
+                sw.WriteLine(textBox2.Text);
+                sw.WriteLine(textBox3.Text);
+                sw.Close();
             }
         }
 
@@ -210,6 +217,11 @@ namespace KURSOVOI_PROECT_KURS3
                 }
             }
             listBox1.Items.Add("Группа: " + textBox3.Text);
+        }
+
+        private void файлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
