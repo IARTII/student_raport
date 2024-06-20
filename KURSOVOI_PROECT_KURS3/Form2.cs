@@ -111,6 +111,7 @@ namespace KURSOVOI_PROECT_KURS3
             string fileOutputStream;
             SaveFileDialog SFD = new SaveFileDialog();
             SFD.Filter = "XLSX (*.xlsx)|*.xlsx|XLS (*.xls)|*.xls";
+            SFD.FileName = $"Рапортичка от {startWeekDate}";
 
             if (SFD.ShowDialog() == DialogResult.OK)
             {
