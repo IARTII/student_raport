@@ -101,8 +101,9 @@
             // помощьToolStripMenuItem
             // 
             помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            помощьToolStripMenuItem.Size = new Size(152, 26);
+            помощьToolStripMenuItem.Size = new Size(224, 26);
             помощьToolStripMenuItem.Text = "Помощь";
+            помощьToolStripMenuItem.Click += помощьToolStripMenuItem_Click;
             // 
             // dataGridView1
             // 

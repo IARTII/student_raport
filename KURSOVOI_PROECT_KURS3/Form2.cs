@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using Microsoft.Office.Interop.Excel;
 using System.Security.Cryptography;
 using System.IO;
+using System.Diagnostics;
 
 namespace KURSOVOI_PROECT_KURS3
 {
@@ -200,7 +201,7 @@ namespace KURSOVOI_PROECT_KURS3
 
         private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Process.Start("explorer.exe", @"..\..\..\Руководство пользователя\Руководство пользователя.docx");
         }
     }
 }

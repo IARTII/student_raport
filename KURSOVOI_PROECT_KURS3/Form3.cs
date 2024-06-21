@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -246,6 +247,11 @@ namespace KURSOVOI_PROECT_KURS3
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", @"..\..\..\Руководство пользователя\Руководство пользователя.docx");
         }
     }
 }
