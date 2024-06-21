@@ -197,5 +197,10 @@ namespace KURSOVOI_PROECT_KURS3
         {
 
         }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

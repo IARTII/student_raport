@@ -136,7 +136,7 @@
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "add_subjTime";
-            Text = "add_subjTime";
+            Text = "Добавить расписание";
             Load += add_subjTime_Load;
             ResumeLayout(false);
             PerformLayout();

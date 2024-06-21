@@ -58,8 +58,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, справкаToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(652, 24);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(745, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -68,21 +68,21 @@
             // 
             файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { сохранитьToolStripMenuItem, выйтиToolStripMenuItem });
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            файлToolStripMenuItem.Size = new Size(48, 20);
+            файлToolStripMenuItem.Size = new Size(59, 24);
             файлToolStripMenuItem.Text = "Файл";
             файлToolStripMenuItem.Click += файлToolStripMenuItem_Click;
             // 
             // сохранитьToolStripMenuItem
             // 
             сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            сохранитьToolStripMenuItem.Size = new Size(180, 22);
+            сохранитьToolStripMenuItem.Size = new Size(166, 26);
             сохранитьToolStripMenuItem.Text = "Сохранить";
             сохранитьToolStripMenuItem.Click += сохранитьToolStripMenuItem_Click;
             // 
             // выйтиToolStripMenuItem
             // 
             выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            выйтиToolStripMenuItem.Size = new Size(180, 22);
+            выйтиToolStripMenuItem.Size = new Size(166, 26);
             выйтиToolStripMenuItem.Text = "Выйти";
             выйтиToolStripMenuItem.Click += выйтиToolStripMenuItem_Click;
             // 
@@ -90,21 +90,22 @@
             // 
             справкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { помощьToolStripMenuItem });
             справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            справкаToolStripMenuItem.Size = new Size(65, 20);
+            справкаToolStripMenuItem.Size = new Size(81, 24);
             справкаToolStripMenuItem.Text = "Справка";
             // 
             // помощьToolStripMenuItem
             // 
             помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            помощьToolStripMenuItem.Size = new Size(123, 22);
+            помощьToolStripMenuItem.Size = new Size(224, 26);
             помощьToolStripMenuItem.Text = "Помощь";
+            помощьToolStripMenuItem.Click += помощьToolStripMenuItem_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(10, 32);
+            label1.Location = new Point(11, 43);
             label1.Name = "label1";
-            label1.Size = new Size(195, 15);
+            label1.Size = new Size(249, 20);
             label1.TabIndex = 2;
             label1.Text = "Выберите стартовый день недели:";
             label1.Click += label1_Click;
@@ -112,8 +113,7 @@
             // monthCalendar1
             // 
             monthCalendar1.BackColor = SystemColors.ButtonShadow;
-            monthCalendar1.Location = new Point(10, 53);
-            monthCalendar1.Margin = new Padding(8, 7, 8, 7);
+            monthCalendar1.Location = new Point(11, 71);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 3;
             monthCalendar1.DateChanged += monthCalendar1_DateChanged;
@@ -121,53 +121,48 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(259, 144);
-            listBox1.Margin = new Padding(3, 2, 3, 2);
+            listBox1.Location = new Point(296, 192);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(379, 139);
+            listBox1.Size = new Size(433, 184);
             listBox1.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(259, 32);
+            label2.Location = new Point(296, 43);
             label2.Name = "label2";
-            label2.Size = new Size(137, 15);
+            label2.Size = new Size(172, 20);
             label2.TabIndex = 6;
             label2.Text = "Введите ФИО старосты:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(259, 53);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(296, 71);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(267, 23);
+            textBox1.Size = new Size(305, 27);
             textBox1.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(259, 84);
+            label3.Location = new Point(296, 112);
             label3.Name = "label3";
-            label3.Size = new Size(136, 15);
+            label3.Size = new Size(172, 20);
             label3.TabIndex = 8;
             label3.Text = "Введите ФИО куратора:";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(259, 101);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(296, 135);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(267, 23);
+            textBox2.Size = new Size(305, 27);
             textBox2.TabIndex = 9;
             // 
             // button2
             // 
-            button2.Location = new Point(531, 53);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(607, 71);
             button2.Name = "button2";
-            button2.Size = new Size(82, 22);
+            button2.Size = new Size(94, 29);
             button2.TabIndex = 10;
             button2.Text = "Изменить";
             button2.UseVisualStyleBackColor = true;
@@ -175,10 +170,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(531, 100);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(607, 133);
             button3.Name = "button3";
-            button3.Size = new Size(82, 22);
+            button3.Size = new Size(94, 29);
             button3.TabIndex = 11;
             button3.Text = "Изменить";
             button3.UseVisualStyleBackColor = true;
@@ -186,10 +180,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(10, 218);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(11, 291);
             button1.Name = "button1";
-            button1.Size = new Size(168, 22);
+            button1.Size = new Size(192, 29);
             button1.TabIndex = 12;
             button1.Text = "Добавить студентов";
             button1.UseVisualStyleBackColor = true;
@@ -198,26 +191,24 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(10, 242);
+            label4.Location = new Point(11, 323);
             label4.Name = "label4";
-            label4.Size = new Size(94, 15);
+            label4.Size = new Size(119, 20);
             label4.TabIndex = 13;
             label4.Text = "Введите группу:";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(10, 262);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Location = new Point(11, 349);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 23);
+            textBox3.Size = new Size(177, 27);
             textBox3.TabIndex = 14;
             // 
             // button4
             // 
-            button4.Location = new Point(171, 262);
-            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Location = new Point(195, 349);
             button4.Name = "button4";
-            button4.Size = new Size(75, 22);
+            button4.Size = new Size(86, 29);
             button4.TabIndex = 15;
             button4.Text = "Изменить";
             button4.UseVisualStyleBackColor = true;
@@ -225,10 +216,10 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(652, 294);
+            ClientSize = new Size(745, 392);
             Controls.Add(button4);
             Controls.Add(textBox3);
             Controls.Add(label4);
@@ -245,7 +236,6 @@
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Создание";

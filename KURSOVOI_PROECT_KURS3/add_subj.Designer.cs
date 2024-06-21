@@ -136,7 +136,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "add_subj";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "add_subj";
+            Text = "Добавить студентов";
             Load += add_subj_Load;
             ResumeLayout(false);
             PerformLayout();
